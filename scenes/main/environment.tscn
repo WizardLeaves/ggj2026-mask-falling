@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b0kbvitc6ecar"]
+
+[ext_resource type="Script" uid="uid://c6cvba4o2knws" path="res://scenes/main/environment.gd" id="1_wveiq"]
+[ext_resource type="PackedScene" uid="uid://ch1h643me5ioi" path="res://scenes/wall/platform_base.tscn" id="4_flmfh"]
+[ext_resource type="Script" uid="uid://da5xd4wu0w4op" path="res://scenes/main/prefab_spawner.gd" id="6_58wo2"]
+
+[node name="Environment" type="Node2D" unique_id=200072663]
+script = ExtResource("1_wveiq")
+
+[node name="PlatformSpawner" type="Node2D" parent="." unique_id=1898029056]
+script = ExtResource("6_58wo2")
+region_prefab = ExtResource("4_flmfh")
+
+[node name="SpawnTimer" type="Timer" parent="PlatformSpawner" unique_id=509360635]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="PlatformSpawner/SpawnTimer" to="PlatformSpawner" method="_on_spawn_timeout"]

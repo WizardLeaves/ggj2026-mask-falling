@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://clpckdd5h0isu"]
+
+[ext_resource type="PackedScene" uid="uid://gh35k32ta8ox" path="res://scenes/bullet/bullet_emitter.tscn" id="1_ffrr1"]
+
+[sub_resource type="GDScript" id="GDScript_81s4n"]
+script/source = "extends Node2D
+
+
+func shoot() -> void:
+	for node in get_children():
+		node.emit_bullet()
+"
+
+[node name="Type2" type="Node2D" unique_id=552955102]
+script = SubResource("GDScript_81s4n")
+
+[node name="Emitter_1" parent="." unique_id=1652336582 instance=ExtResource("1_ffrr1")]
+position = Vector2(550, 1100)
+bullet_interval = 2.0
+bullet_can_be_reflected = true
+bullet_target = Vector2(450, 160)
+
+[node name="Emitter_2" parent="." unique_id=961326235 instance=ExtResource("1_ffrr1")]
+position = Vector2(500, 1130)
+bullet_interval = 2.0
+bullet_can_be_reflected = true
+bullet_target = Vector2(150, 160)
+
+[node name="Emitter_3" parent="." unique_id=190226630 instance=ExtResource("1_ffrr1")]
+position = Vector2(450, 1160)
+bullet_interval = 2.0
+bullet_can_be_reflected = true
+bullet_target = Vector2(-150, 160)

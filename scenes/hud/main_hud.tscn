@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://us6xv1s475p3"]
+
+[ext_resource type="Script" uid="uid://blmr82vyeb3gv" path="res://scenes/hud/main_hud.gd" id="1_2c048"]
+[ext_resource type="Texture2D" uid="uid://c7o37s1qufmk0" path="res://layer/ui/ui_bar_energy.PNG" id="1_78qht"]
+[ext_resource type="Texture2D" uid="uid://w1hsd01o3cyl" path="res://layer/ui/ui_bar_sanity.PNG" id="2_2c048"]
+[ext_resource type="Script" uid="uid://n4s746vjoyth" path="res://scenes/hud/heart_container.gd" id="2_a535s"]
+[ext_resource type="Texture2D" uid="uid://dbxisu544vjsw" path="res://layer/ui/ui_bar_empty.PNG" id="2_bx8t1"]
+[ext_resource type="Texture2D" uid="uid://rvpf4f3ictum" path="res://layer/ui/ui_bar_brain.PNG" id="5_2c048"]
+[ext_resource type="Texture2D" uid="uid://cu81toie7ecx1" path="res://layer/ui/ui_bar_mask.PNG" id="6_aouoc"]
+[ext_resource type="Texture2D" uid="uid://cx3xum514bj1a" path="res://layer/ui/ui_score.PNG" id="6_urdkw"]
+[ext_resource type="FontFile" uid="uid://bstttd50dh0tw" path="res://fonts/ShanHaiXuanWuTi-2.ttf" id="8_bx8t1"]
+[ext_resource type="Texture2D" uid="uid://dsqw6g8cvkah7" path="res://img/heart_empty.png" id="10_chn2a"]
+[ext_resource type="Texture2D" uid="uid://bkx6t3455brca" path="res://img/heart.png" id="11_n1rem"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aouoc"]
+bg_color = Color(0.91, 0.91, 0.91, 0)
+
+[node name="MainHud" type="Control" unique_id=1556759344]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2c048")
+
+[node name="BG" type="Panel" parent="." unique_id=782699810]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 160.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aouoc")
+
+[node name="Heart" type="TextureRect" parent="BG" unique_id=1241198049]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 23.0
+offset_right = 233.0
+offset_bottom = 68.0
+texture = ExtResource("10_chn2a")
+script = ExtResource("2_a535s")
+
+[node name="Heart" type="TextureRect" parent="BG/Heart" unique_id=351683394]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 54.0
+offset_bottom = 44.0
+texture = ExtResource("11_n1rem")
+
+[node name="Heart2" type="TextureRect" parent="BG/Heart" unique_id=1432398695]
+layout_mode = 0
+offset_left = 69.0
+offset_right = 122.0
+offset_bottom = 42.0
+texture = ExtResource("11_n1rem")
+
+[node name="Heart3" type="TextureRect" parent="BG/Heart" unique_id=202662667]
+layout_mode = 0
+offset_left = 138.0
+offset_right = 191.0
+offset_bottom = 42.0
+texture = ExtResource("11_n1rem")
+
+[node name="BarCover" type="TextureRect" parent="BG" unique_id=229976090]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_bx8t1")
+
+[node name="EnergyBar" type="TextureProgressBar" parent="BG" unique_id=1131743260]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+step = 0.1
+value = 100.0
+nine_patch_stretch = true
+texture_progress = ExtResource("1_78qht")
+
+[node name="SansBar" type="TextureProgressBar" parent="BG" unique_id=1051019321]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+step = 0.1
+value = 40.0
+texture_progress = ExtResource("2_2c048")
+
+[node name="BrainCover" type="TextureRect" parent="BG" unique_id=2077034007]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_2c048")
+
+[node name="EnergyCover" type="TextureRect" parent="BG" unique_id=1789434510]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_aouoc")
+
+[node name="ScoreCover" type="TextureRect" parent="BG" unique_id=344921639]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_urdkw")
+
+[node name="Score" type="Label" parent="BG" unique_id=1948566201]
+layout_mode = 1
+offset_left = 434.0
+offset_top = 28.0
+offset_right = 581.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(0.96862745, 0.87058824, 0.8666667, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("8_bx8t1")
+theme_override_font_sizes/font_size = 36
+text = "1010000"
+horizontal_alignment = 1
+vertical_alignment = 1

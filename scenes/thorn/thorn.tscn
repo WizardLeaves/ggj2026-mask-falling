@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dv1magiyao1yx"]
+
+[ext_resource type="Script" uid="uid://b1xoha3f12abp" path="res://scenes/thorn/thorn.gd" id="1_x60xl"]
+[ext_resource type="Texture2D" uid="uid://revf25puyj6f" path="res://img/ThornBig.png" id="2_x60xl"]
+
+[node name="Thorn" type="Area2D" unique_id=1759143806]
+script = ExtResource("1_x60xl")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=224635051]
+texture = ExtResource("2_x60xl")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=511683817]
+polygon = PackedVector2Array(0, 58, 16, 0, 0, -56, -15, 1)
+
+[node name="WaitTimer" type="Timer" parent="." unique_id=917841808]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]

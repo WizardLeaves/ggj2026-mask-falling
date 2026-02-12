@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bvsvkh8p2iulo"]
+
+[ext_resource type="Script" uid="uid://dyexxji2w2r5s" path="res://scenes/main/emitter.gd" id="1_n8kdo"]
+[ext_resource type="Script" uid="uid://ccf8v1ius7at5" path="res://scenes/bullet/bullets.gd" id="1_uj36j"]
+[ext_resource type="PackedScene" uid="uid://ckhc03fw5evxy" path="res://scenes/boss/enemy_emitter.tscn" id="2_6ugtp"]
+[ext_resource type="PackedScene" uid="uid://423xr5xy7bk" path="res://scenes/bullet/prefabs/type_1.tscn" id="2_b6k33"]
+[ext_resource type="PackedScene" uid="uid://clpckdd5h0isu" path="res://scenes/bullet/prefabs/type_2.tscn" id="3_uj36j"]
+[ext_resource type="PackedScene" uid="uid://gcgbhqvo6kuf" path="res://scenes/bullet/prefabs/type_4.tscn" id="4_6ugtp"]
+
+[node name="Bullets" type="Node2D" unique_id=209300185]
+script = ExtResource("1_uj36j")
+
+[node name="EnemyEmitter" parent="." unique_id=1652336582 instance=ExtResource("2_6ugtp")]
+position = Vector2(300, 1400)
+bullet_target = Vector2(300, 900)
+
+[node name="Bullets" type="Node2D" parent="." unique_id=1652020936]
+
+[node name="Emitter" type="Node2D" parent="." unique_id=262359321]
+script = ExtResource("1_n8kdo")
+
+[node name="Type1" parent="Emitter" unique_id=1755701437 instance=ExtResource("2_b6k33")]
+
+[node name="Type2" parent="Emitter" unique_id=552955102 instance=ExtResource("3_uj36j")]
+
+[node name="Type4" parent="Emitter" unique_id=304639721 instance=ExtResource("4_6ugtp")]

@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://gcgbhqvo6kuf"]
+
+[ext_resource type="PackedScene" uid="uid://gh35k32ta8ox" path="res://scenes/bullet/bullet_emitter.tscn" id="1_iih7y"]
+
+[sub_resource type="GDScript" id="GDScript_b6k33"]
+script/source = "extends Node2D
+
+
+func shoot() -> void:
+	for node in get_children():
+		node.emit_bullet()
+		print(\"1\")
+"
+
+[node name="Type4" type="Node2D" unique_id=304639721]
+script = SubResource("GDScript_b6k33")
+
+[node name="Emitter_1" parent="." unique_id=1652336582 instance=ExtResource("1_iih7y")]
+position = Vector2(300, 1400)
+bullet_interval = 1.0
+bullet_can_be_reflected = true
+bullet_target = Vector2(-200, 160)
+
+[node name="Emitter_2" parent="." unique_id=2092930608 instance=ExtResource("1_iih7y")]
+position = Vector2(300, 1400)
+bullet_interval = 1.0
+bullet_can_be_reflected = true
+bullet_target = Vector2(-100, 160)
+
+[node name="Emitter_3" parent="." unique_id=1465136809 instance=ExtResource("1_iih7y")]
+position = Vector2(300, 1400)
+bullet_interval = 1.0
+bullet_can_be_reflected = true
+bullet_target = Vector2(0, 160)
+
+[node name="Emitter_4" parent="." unique_id=435051948 instance=ExtResource("1_iih7y")]
+position = Vector2(300, 1400)
+bullet_interval = 1.0
+bullet_can_be_reflected = true
+bullet_target = Vector2(100, 160)
+
+[node name="Emitter_5" parent="." unique_id=2081644487 instance=ExtResource("1_iih7y")]
+position = Vector2(300, 1400)
+bullet_interval = 1.0
+bullet_can_be_reflected = true
+bullet_target = Vector2(200, 160)
+
+[node name="Emitter_6" parent="." unique_id=346781383 instance=ExtResource("1_iih7y")]
+position = Vector2(300, 1400)
+bullet_interval = 1.0
+bullet_can_be_reflected = true
+bullet_target = Vector2(300, 160)
+
+[node name="Emitter_7" parent="." unique_id=1724476188 instance=ExtResource("1_iih7y")]
+position = Vector2(300, 1400)
+bullet_interval = 1.0
+bullet_can_be_reflected = true
+bullet_target = Vector2(400, 160)
+
+[node name="Emitter_8" parent="." unique_id=1924205078 instance=ExtResource("1_iih7y")]
+position = Vector2(300, 1400)
+bullet_interval = 1.0
+bullet_can_be_reflected = true
+bullet_target = Vector2(500, 160)
+
+[node name="Emitter_9" parent="." unique_id=598283539 instance=ExtResource("1_iih7y")]
+position = Vector2(300, 1400)
+bullet_interval = 1.0
+bullet_can_be_reflected = true
+bullet_target = Vector2(600, 160)
+
+[node name="Emitter_10" parent="." unique_id=1327024833 instance=ExtResource("1_iih7y")]
+position = Vector2(300, 1400)
+bullet_interval = 1.0
+bullet_can_be_reflected = true
+bullet_target = Vector2(700, 160)

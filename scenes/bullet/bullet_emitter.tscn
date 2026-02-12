@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://gh35k32ta8ox"]
+
+[ext_resource type="Script" uid="uid://c7cdom6r0n0ei" path="res://scenes/bullet/bullet_emitter.gd" id="1_bv2x7"]
+
+[node name="BulletEmitter" type="Node2D" unique_id=1652336582]
+script = ExtResource("1_bv2x7")
+
+[node name="EmitTimer" type="Timer" parent="." unique_id=1434553717]

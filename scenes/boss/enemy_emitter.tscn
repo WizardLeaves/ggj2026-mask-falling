@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ckhc03fw5evxy"]
+
+[ext_resource type="Script" uid="uid://caog7da3ceysi" path="res://scenes/boss/enemy_emitter.gd" id="1_dhl3i"]
+
+[node name="EnemyEmitter" type="Node2D" unique_id=1652336582]
+script = ExtResource("1_dhl3i")
+bullet_target = Vector2(300, 1180)
+
+[node name="EmitTimer" type="Timer" parent="." unique_id=1434553717]

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ch1h643me5ioi"]
+
+[ext_resource type="Script" uid="uid://djpebwwip1584" path="res://scenes/wall/platform_base.gd" id="1_bpeis"]
+[ext_resource type="Texture2D" uid="uid://b8sky6sj2erg2" path="res://img/wall/wall.png" id="2_bpeis"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_peby6"]
+size = Vector2(149, 24)
+
+[node name="PlatformBase" type="Area2D" unique_id=765004771 groups=["platform"]]
+script = ExtResource("1_bpeis")
+
+[node name="Spirit" type="Sprite2D" parent="." unique_id=1049095964]
+texture = ExtResource("2_bpeis")
+
+[node name="Shape" type="CollisionShape2D" parent="." unique_id=564883651]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_peby6")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://pies1k28fd7b"]
+
+[ext_resource type="Script" uid="uid://bnn0oprhpslnh" path="res://scenes/manager/energy_manager/energy_manager.gd" id="1_mdbpq"]
+
+[node name="EnergyManager" type="Node" unique_id=1497490658]
+script = ExtResource("1_mdbpq")

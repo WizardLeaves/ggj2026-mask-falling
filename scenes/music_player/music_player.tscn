@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bq8hlaiwpcae7"]
+
+[ext_resource type="AudioStream" uid="uid://j33pqua21pfv" path="res://audio/bgm/see_you_again.mp3" id="1_38sxc"]
+[ext_resource type="Script" uid="uid://cq31dgadwc7so" path="res://scenes/music_player/music_player.gd" id="1_bldo0"]
+
+[node name="MusicPlayer" type="Node" unique_id=1375999330]
+script = ExtResource("1_bldo0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=236636337]
+stream = ExtResource("1_38sxc")
+bus = &"BGM"
+parameters/looping = true

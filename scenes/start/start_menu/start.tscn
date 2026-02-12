@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://dhdf4b0wb6iby"]
+
+[ext_resource type="Script" uid="uid://m6trymg21dqt" path="res://scenes/start/start_menu/start.gd" id="1_txddl"]
+[ext_resource type="Texture2D" uid="uid://b365sj8qo2mhy" path="res://layer/start/cover.png" id="2_pi8g6"]
+[ext_resource type="Texture2D" uid="uid://c6o55c0eepkar" path="res://layer/start/start_through.png" id="3_e3jhu"]
+[ext_resource type="Texture2D" uid="uid://bsevb0tcan5yg" path="res://layer/start/start_default.png" id="3_qkodv"]
+[ext_resource type="Texture2D" uid="uid://c8duswmv5q3l0" path="res://layer/start/select_music_through.png" id="4_qkodv"]
+[ext_resource type="FontFile" uid="uid://crlqp0ps4a73i" path="res://fonts/uz.ttf" id="5_lunmc"]
+[ext_resource type="Texture2D" uid="uid://cywko7s65ly42" path="res://layer/start/select_music.png" id="5_qkodv"]
+
+[node name="Start" type="Control" unique_id=508661084]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_txddl")
+
+[node name="Cover" type="TextureRect" parent="." unique_id=76238678]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 1360.0
+texture = ExtResource("2_pi8g6")
+
+[node name="Begin" type="TextureButton" parent="." unique_id=110767265]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = -166.0
+offset_right = 20.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_qkodv")
+texture_pressed = ExtResource("3_e3jhu")
+texture_hover = ExtResource("3_e3jhu")
+stretch_mode = 5
+
+[node name="LoadMusic" type="TextureButton" parent="." unique_id=899362281]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -278.0
+offset_top = 522.0
+offset_right = 282.0
+offset_bottom = 654.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_qkodv")
+texture_pressed = ExtResource("4_qkodv")
+texture_hover = ExtResource("4_qkodv")
+
+[node name="MusicDisplayTitle" type="Label" parent="LoadMusic" unique_id=701459362]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.0
+offset_top = -10.0
+offset_right = 270.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.15294118, 0.14117648, 0.27450982, 1)
+theme_override_fonts/font = ExtResource("5_lunmc")
+theme_override_font_sizes/font_size = 36
+text = "这是个歌名1111111"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=1309082470]
+title = "Open a File"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.mp3", "*.ogg")
+use_native_dialog = true
+
+[connection signal="button_down" from="Begin" to="." method="_on_begin_button_down"]
+[connection signal="button_down" from="LoadMusic" to="." method="_on_load_music_button_down"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_selected"]

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cxx4jkmoiiw6c"]
+
+[ext_resource type="Script" uid="uid://b1rcrmp1pneos" path="res://scenes/test/test.gd" id="1_da6vm"]
+[ext_resource type="PackedScene" uid="uid://423xr5xy7bk" path="res://scenes/bullet/prefabs/type_1.tscn" id="2_51e2l"]
+[ext_resource type="PackedScene" uid="uid://clpckdd5h0isu" path="res://scenes/bullet/prefabs/type_2.tscn" id="3_oj4i3"]
+[ext_resource type="PackedScene" uid="uid://6kvy1x8h2euv" path="res://scenes/player/player.tscn" id="3_st4qh"]
+
+[node name="Test" type="Node2D" unique_id=613022745]
+script = ExtResource("1_da6vm")
+
+[node name="Type1" parent="." unique_id=1755701437 instance=ExtResource("2_51e2l")]
+
+[node name="Type2" parent="." unique_id=552955102 instance=ExtResource("3_oj4i3")]
+
+[node name="Timer" type="Timer" parent="." unique_id=952869182]
+wait_time = 5.0
+autostart = true
+
+[node name="Player" parent="." unique_id=1041717554 instance=ExtResource("3_st4qh")]
+position = Vector2(289, -6)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

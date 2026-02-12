@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://1uabh6xjrcse"]
+
+[ext_resource type="Script" uid="uid://lb20elp7684m" path="res://scenes/hud/die_hud.gd" id="1_n8wio"]
+[ext_resource type="FontFile" uid="uid://crlqp0ps4a73i" path="res://fonts/uz.ttf" id="2_u6vc5"]
+[ext_resource type="Texture2D" uid="uid://b4nbohbpg6fyd" path="res://img/defeat/play_again.png" id="3_88ahg"]
+[ext_resource type="Texture2D" uid="uid://bk2jdwr6qhdi0" path="res://img/defeat/back.png" id="4_f2dyn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8wio"]
+bg_color = Color(0, 0, 0, 0.80784315)
+
+[node name="DieHud" type="Control" unique_id=576484789]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n8wio")
+
+[node name="Panel" type="Panel" parent="." unique_id=1024167652]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n8wio")
+
+[node name="Score" type="Label" parent="." unique_id=1136086893]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 246.0
+offset_right = 541.0
+offset_bottom = 339.0
+theme_override_fonts/font = ExtResource("2_u6vc5")
+theme_override_font_sizes/font_size = 60
+text = "最终得分"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Score2" type="Label" parent="." unique_id=762790601]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 337.0
+offset_right = 538.0
+offset_bottom = 430.0
+theme_override_fonts/font = ExtResource("2_u6vc5")
+theme_override_font_sizes/font_size = 60
+text = "100000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Score3" type="Label" parent="." unique_id=1970848955]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 474.0
+offset_right = 299.0
+offset_bottom = 567.0
+theme_override_fonts/font = ExtResource("2_u6vc5")
+theme_override_font_sizes/font_size = 40
+text = "击败怪物"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score4" type="Label" parent="." unique_id=366513947]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 565.0
+offset_right = 296.0
+offset_bottom = 658.0
+theme_override_fonts/font = ExtResource("2_u6vc5")
+theme_override_font_sizes/font_size = 60
+text = "15"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score5" type="Label" parent="." unique_id=323131428]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 710.0
+offset_right = 586.0
+offset_bottom = 803.0
+theme_override_fonts/font = ExtResource("2_u6vc5")
+theme_override_font_sizes/font_size = 40
+text = "理智损耗"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score6" type="Label" parent="." unique_id=194586830]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 801.0
+offset_right = 583.0
+offset_bottom = 894.0
+theme_override_fonts/font = ExtResource("2_u6vc5")
+theme_override_font_sizes/font_size = 60
+text = "37"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Again" type="TextureButton" parent="." unique_id=892500549]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 1048.0
+offset_right = 311.0
+offset_bottom = 1131.0
+disabled = true
+texture_normal = ExtResource("3_88ahg")
+
+[node name="Back" type="TextureButton" parent="." unique_id=1761761760]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 1158.0
+offset_right = 312.0
+offset_bottom = 1241.0
+disabled = true
+texture_normal = ExtResource("4_f2dyn")
+
+[connection signal="button_down" from="Again" to="." method="_on_again_button_down"]
+[connection signal="button_down" from="Back" to="." method="_on_back_button_down"]

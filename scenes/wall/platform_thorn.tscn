@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dcteqkmxsd1gx"]
+
+[ext_resource type="Script" uid="uid://cce8s44muoggy" path="res://scenes/wall/platform_thorn.gd" id="1_olutt"]
+[ext_resource type="PackedScene" uid="uid://ch1h643me5ioi" path="res://scenes/wall/platform_base.tscn" id="1_q4idn"]
+[ext_resource type="PackedScene" uid="uid://dv1magiyao1yx" path="res://scenes/thorn/thorn.tscn" id="2_olutt"]
+
+[node name="PlatformThorn" type="Node2D" unique_id=1935255463]
+script = ExtResource("1_olutt")
+
+[node name="PlatformBase" parent="." unique_id=765004771 instance=ExtResource("1_q4idn")]
+
+[node name="Thorn" parent="." unique_id=1759143806 instance=ExtResource("2_olutt")]
+position = Vector2(-36, -48)
+scale = Vector2(0.3, 0.3)
+
+[connection signal="platform_breaked" from="PlatformBase" to="." method="_on_platform_breaked"]
+[connection signal="thorn_breaked" from="Thorn" to="." method="_on_thorn_breaked"]

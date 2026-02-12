@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://sluw8suo70h6"]
+
+[ext_resource type="Script" uid="uid://giia8xg3gi13" path="res://scenes/boss/enemy.gd" id="1_4mbp0"]
+[ext_resource type="Texture2D" uid="uid://c1nifrcfvd8c0" path="res://img/enemy/enemy_base.png" id="2_c5rjy"]
+[ext_resource type="Texture2D" uid="uid://cnfytrl0jhugb" path="res://icon.svg" id="3_4mbp0"]
+[ext_resource type="Texture2D" uid="uid://bdb1b7xh37vba" path="res://img/icon/funnyicon_blender.PNG" id="3_me8sh"]
+[ext_resource type="Texture2D" uid="uid://cws0mifdo736t" path="res://img/icon/funnyicon_csp.PNG" id="4_trnu2"]
+[ext_resource type="Texture2D" uid="uid://cix3nas7my0or" path="res://img/icon/funnyicon_dingding.PNG" id="5_3vhpv"]
+[ext_resource type="Texture2D" uid="uid://b88x44ddnak5r" path="res://icon_mask.png" id="5_boubv"]
+[ext_resource type="Texture2D" uid="uid://ct0u7to0bmjeu" path="res://img/icon/funnyicon_excel.PNG" id="6_bp62k"]
+[ext_resource type="Texture2D" uid="uid://bykxy6n2jh0m8" path="res://img/icon/funnyicon_procreate.PNG" id="7_aucd4"]
+[ext_resource type="Texture2D" uid="uid://bs2eowt6ay3dt" path="res://img/icon/funnyicon_ps.PNG" id="8_epjpp"]
+[ext_resource type="Texture2D" uid="uid://cd6ehxld6y24t" path="res://img/icon/funnyicon_tengxunhuiyi.PNG" id="9_i3oy6"]
+[ext_resource type="Texture2D" uid="uid://bcc8uvtv0d7ob" path="res://img/icon/funnyicon_unity.PNG" id="10_qfsyq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgf3a"]
+size = Vector2(246.01555, 179)
+
+[node name="Enemy" type="Area2D" unique_id=1256408723 groups=["enemy"]]
+script = ExtResource("1_4mbp0")
+head_list = Array[Texture2D]([ExtResource("5_boubv"), ExtResource("3_me8sh"), ExtResource("4_trnu2"), ExtResource("5_3vhpv"), ExtResource("6_bp62k"), ExtResource("7_aucd4"), ExtResource("8_epjpp"), ExtResource("9_i3oy6"), ExtResource("10_qfsyq")])
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=887119356]
+position = Vector2(7.9920645, -0.4365813)
+rotation = 0.007467857
+shape = SubResource("RectangleShape2D_dgf3a")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1018836011]
+texture = ExtResource("2_c5rjy")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=484779768]
+offset_left = -46.0
+offset_top = -63.0
+offset_right = 45.0
+offset_bottom = 28.0
+texture = ExtResource("3_4mbp0")
+expand_mode = 1
+
+[node name="WaitTimer" type="Timer" parent="." unique_id=794347078]
+wait_time = 0.3
+one_shot = true
+
+[node name="EmitTimer" type="Timer" parent="." unique_id=1532036942]
+
+[connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]
+[connection signal="timeout" from="EmitTimer" to="." method="_on_emit_timer_timeout"]

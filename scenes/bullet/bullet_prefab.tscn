@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cr23ox5g3bqbi"]
+
+[ext_resource type="Script" uid="uid://xskymp83p6pn" path="res://scenes/bullet/bullet_prefab.gd" id="1_psenf"]
+[ext_resource type="Texture2D" uid="uid://bwi6pc1y5s4r4" path="res://img/bullet/bullet.png" id="2_psenf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yeyi2"]
+radius = 22.0
+
+[node name="BulletPrefab" type="Area2D" unique_id=458483425]
+script = ExtResource("1_psenf")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1320243664]
+texture = ExtResource("2_psenf")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=344889905]
+shape = SubResource("CircleShape2D_yeyi2")
+
+[node name="WaitTimer" type="Timer" parent="." unique_id=138054171]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]

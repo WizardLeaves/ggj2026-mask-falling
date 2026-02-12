@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cmn3qhgyo47qq"]
+
+[ext_resource type="Texture2D" uid="uid://cnfytrl0jhugb" path="res://icon.svg" id="1_bsrlv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bsrlv"]
+size = Vector2(140, 3600)
+
+[node name="WallSide" type="Area2D" unique_id=1143766610]
+visible = false
+
+[node name="Spirit" type="Sprite2D" parent="." unique_id=838535020]
+position = Vector2(0, 1800)
+scale = Vector2(1, 28.125)
+texture = ExtResource("1_bsrlv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2138378620]
+position = Vector2(-1, 1800)
+shape = SubResource("RectangleShape2D_bsrlv")
